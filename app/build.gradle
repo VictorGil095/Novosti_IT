@@ -1,13 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key_novosti'
+            keyPassword 'victor45932781'
+            storeFile file('C:/Users/Victor/novosti_it.jks')
+            storePassword '45932781'
+        }
+    }
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
-
+    buildToolsVersion "23.0.2"
     defaultConfig {
-        applicationId "com.example.victor.myrssreader"
+        applicationId "com.gil.victor.myrssreader"
         minSdkVersion 9
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -15,11 +22,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
 }

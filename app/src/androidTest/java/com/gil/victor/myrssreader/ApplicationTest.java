@@ -1,4 +1,4 @@
-package com.example.victor.myrssreader;
+package com.gil.victor.myrssreader;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
